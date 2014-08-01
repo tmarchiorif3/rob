@@ -1,0 +1,22 @@
+{
+  "name": "rob",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+      "watch-js": "watchify -t jadeify ./components/*.js -o ./public/javascripts/bundle.js -dv",
+      "build-js": "browserify -t jadeify ./components/*.js -o ./public/javascripts/bundle.js -dv",
+      "serve": "node ./app.js",
+      "watch-serve": "supervisor ./app.js",
+      "start-dev": "npm run watch-js & npm run watch-serve",
+      "start": "npm run build-js & npm run serve"
+  },
+  "dependencies": {
+    "express": "~4.2.0",
+    "static-favicon": "~1.0.0",
+    "morgan": "~1.0.0",
+    "cookie-parser": "~1.0.1",
+    "body-parser": "~1.0.0",
+    "debug": "~0.7.4",
+    "jade": "~1.3.0"
+  }
+}
